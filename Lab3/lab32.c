@@ -4,22 +4,20 @@
 int main()
 {
     double x, y, h, q;
-    int s = 0;
+    int i;
     printf("Введите шаг h\n");
     scanf("%lf", &h);
     printf("\tx\t\t f(x)\n");
     printf("\t_____________________________\n");
     q = 3.00 / h;
-    do
+    for (i = 0; i <= q; i++)
     {
-        x = s * h;
+        x = i * h;
         if (x >= -2.0 && x <= 0.0)
-            y = x * x * sin(pow(x, 1.0 / 3.0) - 3.0);
+              y = x * x * sin(pow(x, 1.0 / 3.0) - 3.0);
         else
-            y = sqrt(x) * cos(2.0 * x);
+        y = sqrt(x) * cos(2.0 * x);
         printf("\tx %.6f\t f(x) %.4f\n", x, y);
-        s++;
     }
-    while (s <= q);
     return 0;
 }
