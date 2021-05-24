@@ -8,7 +8,10 @@ int main()
     scanf("%d", &a);
     printf("Введите второе число b ->\n");
     scanf("%d", &b);
-    for (i = 0; i < (a + b); i++);
+    for (i = 0; i < (a + b); i++)
+    {
+    }
     printf("Сумма a + b -> %d", i);
     return 0;
 }
+asdasd
