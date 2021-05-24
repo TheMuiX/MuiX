@@ -36,24 +36,24 @@ void pr(int n, float a[])
 int main()
 {
     int n;
-    printf("Vvedite n -> ");
+    printf("Введите кол-во элементов массива -> ");
     scanf("%d", &n);
     printf("\n");
-    float srzn, e, a[n];
+    float srzn, s = 0, e, a[n];
     fill(n, a);
 
-    printf("Nach massiv ");
+    printf("Начальный массив ");
     pr(n, a);
 
     srzn = sr(s, n, a);
-    printf("Srednee znachenie = %f", srzn);
+    printf("Среднее значение = %f", srzn);
 
     printf("\n");
-    printf("Vvedite tocnost e-> ");
+    printf("Введите точность e-> ");
     scanf("%f", &e);
 
     printf("\n");
-    printf("Konech massiv ");
+    printf("Конечный массив ");
     for (int i = 0; i < n; i++)
         if (fabs(a[i] - srzn) > e)
             a[i] = izm(srzn, e, i);
