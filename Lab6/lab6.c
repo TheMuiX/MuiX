@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fill(int n, float a[])
+void fill(int n,  a[])
 {
     int i;
     for (i = 0; i < n; i++)
