@@ -8,11 +8,11 @@ void fill(int n, int a[])
     for (i = 0; i < n; i++)
         a[i] = rand () % 101 - 50;
 }
-double avarage(int n, int A[])
+float avarage(int n, int A[])
 {
-    int i, b;
+    int i; float b = 0.0f;
     for (i = 0; i < n; i++)
-        b += A[i];
+        b = b +A[i];
     return b / n;
 
 
@@ -26,6 +26,6 @@ int main ()
     fill(n, A);
     for (i = 0; i < n; i++)
         printf("%4d ", A[i]);
-    printf("\n Среднее значение элементов массива: %f\n", avarage(n, A));
+    printf("\n Среднее значение элементов массива: %1f\n", avarage(n, A));
     return 0;
 }
