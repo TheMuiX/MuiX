@@ -16,27 +16,37 @@ void fill(int n, int m, int A[n][m])
 void Exchange(int n, int m, int A[n][m])
 {
     int i, j, b;
+    if (n > m)
     {
-      for (i = 0; i < n; i++)
-          for (j = 0; j < m; j++)
-              if (i == j)
-              {
-                  b = A[i][j];
-                  A[i][j] = A[i][n - 1 - j];
-                  A[i][m - 1 - j] = b;
-              }
-      }
-
-
-      printf("Матрица, диагонали которые поменялись местами: \n");
-      for (i = 0; i < n; i++)
-      {
-          for (j = 0; j < m; j++)
-          {
-              printf("%4d", A[i][j]);
-          }
-          printf("\n");
-      }
+        for (i = 0; i < m; i++)
+            for (j = 0; j < m; j++)
+            if (i == j)
+            {
+                b = A[i][j];
+                A[i][j] = A[i][j];
+                A[i][j] = b;
+            }
+    }
+    else
+    {
+        for (i = 0; i < n; i++)
+            for (j = 0; j < n; j++)
+            if (i == j)
+            {
+                b = A[i][j];
+                A[i][j] = A[i][j];
+                A[i][j] = b;
+            }
+    }
+    printf("Матрица, диагонали которые поменялись местами: \n");
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < m; j++)
+        {
+            printf("%4d", A[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 int main ()
