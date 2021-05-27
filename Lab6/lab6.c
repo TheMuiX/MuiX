@@ -18,33 +18,43 @@ float avarage(int n, int A[])
 void search(int n, int A[], int e)
 {
     int i;
+    double b = avarage(n, A);
+
     for (i = 0; i < n; i++)
+    {
         if (i % 2 == 0)
         {
-            if (A[i] > avarage(n, A))
-                A[i] -= e;
+            if (A[i] > b)
+                A[i] += e;
         }
         else
-            if (A[i] < avarage(n, A))
+            if (A[i] < b)
                 A[i] += e;
+    }
 }
+
+void print(int i, int n, int A[])
+{
+    for (i = 0; i < n; i++)
+        printf(" %d ", A[i]);
+    printf("\n");
+}
+
+
 int main ()
 {
     srand(time(NULL));
-    int n, i, A[n], e;
+    int n, i = 0, A[n], e;
     printf("Введте кол-во элементов массива n -> ");
     scanf("%d", &n);
     fill(n, A);
-    printf("Матрица с исходными элементами: ");
-    for (i = 0; i < n; i++)
-        printf("%d", A[i]);
-    printf("\nСреднее значение элементов массива: %f\n", avarage(n, A));
+    printf("Матрица с исходными элементами:");
+    print(i, n, A);
+    printf("Среднее значение элементов массива: %f\n", avarage(n, A));
     printf("Введите величину отклонения e -> ");
     scanf("%d", &e);
-    printf("Матрица с усреднёнными элементами: ");
+    printf("Матрица с усреднёнными элементами:");
     search(n, A, e);
-    for (i = 0; i < n; i++)
-        printf("%d ", A[i]);
-    printf("\n");
+    print(i, n, A);
     return 0;
 }
