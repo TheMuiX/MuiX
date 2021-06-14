@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-void fill(int n, int m, int A[n][m])
+void fill(int n, int m, int a[n][m])
 {
     int i, j;
     printf("Starting matrix: \n");
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < m; j++)
-            printf("%4d", A[i][j] = rand () % 101 - 50);
+            printf("%4d", a[i][j] = rand () % 101 - 50);
         printf("\n");
     }
 }
-void Exchange(int n, int m, int A[n][m])
+void Exchange(int n, int m, int a[n][m])
 {
     int i, j, b;
     if (n > m)
@@ -23,9 +23,9 @@ void Exchange(int n, int m, int A[n][m])
             for (j = 0; j < m; j++)
             if (i == j)
             {
-                b = A[i][j];
-                A[i][j] = A[i][m - 1 - j];
-                A[i][m - 1 - j] = b;
+                b = a[i][j];
+                a[i][j] = a[i][m - 1 - j];
+                a[i][m - 1 - j] = b;
             }
         }
     }
@@ -36,9 +36,9 @@ void Exchange(int n, int m, int A[n][m])
             for (j = 0; j < n; j++)
             if (i == j)
             {
-                b = A[i][j];
-                A[i][j] = A[i][m - 1 - j];
-                A[i][m - 1 - j] = b;
+                b = a[i][j];
+                a[i][j] = a[i][m - 1 - j];
+                a[i][m - 1 - j] = b;
             }
         }
     }
@@ -49,18 +49,18 @@ void Exchange(int n, int m, int A[n][m])
                 for (j = 0; j < m; j++)
                 if (i == j)
                 {
-                    b = A[i][j];
-                    A[i][j] = A[i][n - 1 - j];
-                    A[i][n - 1 - j] = b;
+                    b = a[i][j];
+                    a[i][j] = a[i][n - 1 - j];
+                    a[i][n - 1 - j] = b;
                 }
-            }   
+            }
     }
     printf("Final matrix: \n");
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < m; j++)
         {
-            printf("%4d", A[i][j]);
+            printf("%4d", a[i][j]);
         }
         printf("\n");
     }
@@ -75,8 +75,8 @@ int main ()
     scanf("%d", &n);
     printf("Number of columns m -> ");
     scanf("%d", &m);
-    int A[n][m];
-    fill(n, m, A);
-    Exchange(n, m, A);
+    int a[n][m];
+    fill(n, m, a);
+    Exchange(n, m, a);
     return 0;
 }

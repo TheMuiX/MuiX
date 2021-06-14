@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-void fill(int n, int m, int k[n][m])
+void fill(int n, int m, int a[n][m])
 {
     int i, j;
     printf("Starting matrix: \n");
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < m; j++)
-            printf("%4d", k[i][j] = rand () % 101 - 50);
+            printf("%4d", a[i][j] = rand () % 101 - 50);
         printf("\n");
     }
 }
-void Exchange(int n, int m, int k[n][m])
+void Exchange(int n, int m, int a[n][m])
 {
     int i, j, b;
     if (n > m)
@@ -23,9 +23,9 @@ void Exchange(int n, int m, int k[n][m])
             for (j = 0; j < m; j++)
             if (i == j)
             {
-                b = k[i][j];
-                k[i][j] = k[i][m - 1 - j];
-                k[i][m - 1 - j] = b;
+                b = a[i][j];
+                a[i][j] = a[i][m - 1 - j];
+                a[i][m - 1 - j] = b;
             }
         }
     }
@@ -36,9 +36,9 @@ void Exchange(int n, int m, int k[n][m])
             for (j = 0; j < n; j++)
             if (i == j)
             {
-                b = k[i][j];
-                k[i][j] = k[i][m - 1 - j];
-                k[i][m - 1 - j] = b;
+                b = a[i][j];
+                a[i][j] = a[i][m - 1 - j];
+                a[i][m - 1 - j] = b;
             }
         }
     }
@@ -49,9 +49,9 @@ void Exchange(int n, int m, int k[n][m])
                 for (j = 0; j < m; j++)
                 if (i == j)
                 {
-                    b = k[i][j];
-                    k[i][j] = k[i][n - 1 - j];
-                    k[i][n - 1 - j] = b;
+                    b = a[i][j];
+                    a[i][j] = a[i][n - 1 - j];
+                    a[i][n - 1 - j] = b;
                 }
             }
     }
@@ -70,12 +70,11 @@ void Exchange(int n, int m, int k[n][m])
 int main ()
 {
     srand(time(NULL));
-    int n, m, p = 0;
+    int n, m;
     printf("Number of lines n -> ");
     scanf("%d", &n);
     printf("Number of columns m -> ");
     scanf("%d", &m);
-    int k[n][m];
     int **a = (int **)malloc(n * sizeof(int *));
     if (!a)
     {
