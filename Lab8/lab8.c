@@ -26,8 +26,8 @@ int main()
         if(isdigit(a))
             count++;
         printf("%c", a);
-        if( )//ПРОВЕРКА НА F11
-            break;
+        /*if( )//ПРОВЕРКА НА F11
+            break;*/
     }
     if (count != 0)
     {
